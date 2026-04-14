@@ -10,8 +10,7 @@ Web de búsqueda de conciertos de bandas musicales.
 
 ## Descripción
 
-Permitirá consultar información sobre distintas bandas musicales y los conciertos que estas realizan.
-Una banda puede estar asociada a muchos conciertos, pero un concierto solo puede estar asociado a una banda
+El sistema permitirá buscar información sobre bandas musicales y los conciertos que realizan.En la base de datos se guardarán datos como el nombre de la banda, el lugar del concierto, la fecha y los precios. Una banda puede tener muchos conciertos (relacion 1N), pero cada concierto pertenece a una sola banda. 
 
 ## Diagrama de entidad relación (DER)
 
