@@ -1,0 +1,18 @@
+conciertos.model:
+public function getByBanda($banda){
+        $query = $this->db->prepare('SELECT * FROM conciertos WHERE id_banda = ?');
+        $query->execute([$id_banda]);
+
+        $conciertos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $conciertos;
+}
+
+conciertos.controller:
+
+public function showByBanda($req){
+    $id_banda = $req->id;
+    $conciertos = $this->model->getByBanda($id_banda);
+    $this->view->renderConciertos($conciertos);
+}
+
+
