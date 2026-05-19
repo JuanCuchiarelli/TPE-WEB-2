@@ -1,0 +1,39 @@
+<h2>Panel Administración Bandas</h2>
+
+<h3>Agregar Banda</h3>
+
+<form action="<?= BASE_URL ?>agregar-banda" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" required>
+    <input type="text" name="genero" placeholder="Genero" required>
+    <input type="text" name="pais_de_origen" placeholder="Pais" required>
+    <input type="text" name="img" placeholder="URL imagen">
+    <textarea name="descripcion" placeholder="Descripcion"></textarea>
+    <button type="submit">
+        Guardar
+    </button>
+</form>
+
+<hr>
+<h3>Listado de Bandas</h3>
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Genero</th>
+        <th>Acciones</th>
+    </tr>
+    <?php foreach($bandas as $banda): ?>
+        <tr>
+            <td><?= htmlspecialchars($banda->nombre) ?></td>
+            <td><?= htmlspecialchars($banda->genero) ?></td>
+            <td>
+                <a href="<?= BASE_URL ?>editar-banda/<?= $banda->id_banda ?>">
+                    Editar
+                </a>
+                |
+                <a href="<?= BASE_URL ?>eliminar-banda/<?= $banda->id_banda ?>">
+                    Eliminar
+                </a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

@@ -34,4 +34,16 @@ class ConcertModel {
         $query = $this->db->prepare("UPDATE conciertos SET fecha = ?, lugar = ?, ciudad = ?, id_banda = ?, precio_platea = ?, precio_campo = ?, precio_popular = ? WHERE id_concierto = ?");
         $query->execute([$fecha, $lugar, $ciudad, $id_banda, $p_platea, $p_campo, $p_popular, $id]);
     }
+<<<<<<< HEAD
+
+    //listado de items por categoria
+    public function getByBanda($id_banda){
+        $query = $this->db->prepare('SELECT * FROM conciertos WHERE id_banda = ?');
+        $query->execute([$id_banda]);
+
+        $conciertos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $conciertos;
+    }
+=======
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
 }

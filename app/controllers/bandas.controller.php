@@ -41,7 +41,11 @@ class BandasController{
         }
 
         // redirige a la lista de bandas ---> REVISAR
+<<<<<<< HEAD
+        header("Location: " . BASE_URL . 'bandas');  
+=======
         header("Location: " . BASE_URL );   
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
     }
 
     public function update($req){
@@ -64,7 +68,11 @@ class BandasController{
 
         $nombre = $_POST['nombre'];
         $genero = $_POST['genero'];
+<<<<<<< HEAD
+        $pais_de_origen = $_POST['pais_de_origen'];
+=======
         $pais = $_POST['pais_de_origen'];
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
         $img = $_POST['img'] ?? null;
         $descripcion = $_POST['descripcion'] ?? null;
 
@@ -77,7 +85,11 @@ class BandasController{
             $descripcion
         );
 
+<<<<<<< HEAD
+        header("Location: " . BASE_URL . 'bandas');
+=======
         header("Location: " . BASE_URL ); //REVISAR CON RUTEO
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
     }
 
     public function delete($req){
@@ -90,6 +102,26 @@ class BandasController{
 
         $this->model->delete($id);
 
+<<<<<<< HEAD
+        header("Location: " . BASE_URL . 'bandas');
+    }
+
+    public function showEditForm($req){
+        $id = $req->id;
+        $banda = $this->model->get($id);
+        if(!$banda){
+            return $this->errorView->renderError(
+                "No existe la banda con el id=$id"
+            );
+        }
+        $this->view->renderEditForm($banda);
+    }
+
+    public function showAdminPanel($req){
+        $bandas = $this->model->getAll();
+        $this->view->showAdminPanel($bandas);
+=======
         header("Location: " . BASE_URL );
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
     }
 }   

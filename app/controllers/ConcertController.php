@@ -90,4 +90,18 @@ class ConcertController {
 
         $this->view->showEditForm($concert, $bandas);
     }
+<<<<<<< HEAD
+
+    public function showByBanda($req) {
+        $id_banda = $req->id;
+        if (!$id_banda) {
+            return $this->errorView->renderError(
+                "Banda no especificada."
+            );
+        }
+        $concerts = $this->model->getByBanda($id_banda);
+        $this->view->showConcertsByBanda($concerts);
+    }
+=======
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
 }

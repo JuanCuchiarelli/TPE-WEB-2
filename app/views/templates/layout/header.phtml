@@ -4,6 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscador de Conciertos</title>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>
+                <a href="<?= BASE_URL ?>conciertos" class="logo">
+                    Buscador de Conciertos
+                </a>
+            </h1>
+            <nav>
+                <div class="nav-links">
+                    <a href="<?= BASE_URL ?>conciertos" class="nav-item">
+                        Conciertos
+                    </a>
+                    <a href="<?= BASE_URL ?>bandas" class="nav-item">
+                        Bandas
+                    </a>
+                    <?php if(isset($_SESSION['id'])) : ?>
+                        <a href="<?= BASE_URL ?>admin-conciertos" class="nav-item">
+                            Admin Conciertos
+                        </a>
+                        <a href="<?= BASE_URL ?>admin-bandas" class="nav-item">
+                            Admin Bandas
+                        </a>
+                    <?php endif; ?>
+                </div>
+                <div class="user-menu">
+                    <?php if(isset($_SESSION['id'])) : ?>
+                        <span class="user-email">
+                            <?= htmlspecialchars($_SESSION['email']) ?>
+                        </span>
+                        <a href="<?= BASE_URL ?>logout" class="btn-logout">
+                            Cerrar sesión
+                        </a>
+                    <?php else : ?>
+                        <a href="<?= BASE_URL ?>login_form" class="btn-login">
+                            Ingresar
+                        </a>
+=======
     <!-- Vinculación al archivo de estilos usando la URL Base Semántica -->
     <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css">
 </head>
@@ -25,11 +66,16 @@
                         <a href="<?= BASE_URL ?>logout" class="btn-logout">Cerrar sesión</a>
                     <?php else: ?>
                         <a href="<?= BASE_URL ?>login" class="btn-login">Ingresar</a>
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
                     <?php endif; ?>
                 </div>
             </nav>
         </div>
     </header>
 
+<<<<<<< HEAD
+<main class="main-container">
+=======
     <!-- Contenedor principal que centra y estiliza todo el cuerpo de la web -->
     <main class="main-container">
+>>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e

@@ -1,0 +1,33 @@
+<h1>Editar banda</h1>
+
+<form action="<?= BASE_URL ?>actualizar-banda/<?= $banda->id_banda ?>" method="POST">
+    <label>Nombre</label>
+    <input 
+        type="text" 
+        name="nombre" 
+        value="<?= htmlspecialchars($banda->nombre) ?>"
+    >
+    <label>Genero</label>
+    <input 
+        type="text" 
+        name="genero" 
+        value="<?= htmlspecialchars($banda->genero) ?>"
+    >
+    <label>Pais</label>
+    <input 
+        type="text" 
+        name="pais_de_origen" 
+        value="<?= htmlspecialchars($banda->pais_de_origen) ?>"
+    >
+    <label>Imagen</label>
+    <input 
+        type="text" 
+        name="img" 
+        value="<?= htmlspecialchars($banda->img) ?>"
+    >
+    <label>Descripcion</label>
+    <textarea name="descripcion"><?= htmlspecialchars($banda->descripcion) ?></textarea>
+    <button type="submit">
+        Guardar
+    </button>
+</form>
