@@ -15,3 +15,14 @@ El sistema permitirá buscar información sobre bandas musicales y los concierto
 ## Diagrama de entidad relación (DER)
 
 ![Diagrama entidad-relación](DER.png)
+
+## Rol de cada integrante
+
+-Germán (Rol A)**: Desarrollo de la entidad N (Conciertos), CRUD completo de ítems con selección dinámica de categorías, sistema de enrutamiento base, control de acceso mediante sesiones y procesamiento del inicio de sesión (Login administrador).
+-Juan (Rol B)**: Desarrollo de la entidad 1 (Bandas), CRUD completo de categorías, listado público de categorías e ítems filtrados por categoría, y funcionalidad de cierre de sesión (Logout).
+
+### Usuario y Clave para administrador
+
+Para acceder a las secciones privadas de administración y testing del sitio (`/admin-conciertos`), utilice los siguientes datos requeridos en la consigna:
+-**Usuario:** `webadmin`
+-**Contraseña:** `admin`

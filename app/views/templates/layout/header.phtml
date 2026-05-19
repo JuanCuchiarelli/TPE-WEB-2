@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buscador de Conciertos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Conciertos</title>
+    <!-- Vinculación al archivo de estilos usando la URL Base Semántica -->
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav>
-    <div>
-      <a href="">Buscador de Conciertos</a>
-      
-      <div>
-        <a href="">Bandas</a>
-        <a href="">Conciertos</a>
-      </div>
+    <header>
+        <div class="header-container">
+            <h1><a href="<?= BASE_URL ?>conciertos" class="logo">Buscador de Conciertos</a></h1>
 
-      <div>
-        <span>juan@unicen.edu.ar</span>
-        <a href="">Cerrar sesión</a>
-      </div>
-    </div>
-  </nav>
+            <nav>
+                <div class="nav-links">
+                    <a href="<?= BASE_URL ?>conciertos" class="nav-item">Conciertos</a>
+                    <a href="<?= BASE_URL ?>bandas" class="nav-item">Bandas</a>
+                </div>
 
-</body>
-</html>
+                <div class="user-menu">
+                    <?php if(isset($_SESSION['USER_NAME'])): ?>
+                        <span class="user-email"><?= htmlspecialchars($_SESSION['USER_NAME']) ?></span>
+                        <a href="<?= BASE_URL ?>logout" class="btn-logout">Cerrar sesión</a>
+                    <?php else: ?>
+                        <a href="<?= BASE_URL ?>login" class="btn-login">Ingresar</a>
+                    <?php endif; ?>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor principal que centra y estiliza todo el cuerpo de la web -->
+    <main class="main-container">
