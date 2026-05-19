@@ -89,13 +89,10 @@ class ConcertView {
         </form>";
         require_once __DIR__ . '/templates/layout/footer.phtml';
     }
-<<<<<<< HEAD
 
     public function showConcertsByBanda($concerts) {
         require_once __DIR__ . '/templates/layout/header.phtml';
         require_once __DIR__ . '/templates/conciertosPorBanda.phtml';
         require_once __DIR__ . '/templates/layout/footer.phtml';
     }
-=======
->>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
 }

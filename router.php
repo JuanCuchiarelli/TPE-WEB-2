@@ -37,7 +37,6 @@ switch ($params[0]) {
         $controller->showConcert($req);
         break;
 
-<<<<<<< HEAD
     case 'bandas':
         $controller = new BandasController();
         $controller->showAll($req);
@@ -48,8 +47,6 @@ switch ($params[0]) {
         $req->id = isset($params[1]) ? $params[1] : null;
         $controller->showByBanda($req);
         break;
-=======
->>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
     // ---- Autenticación ----
     case 'login_form':
         $controller = new AuthController();
@@ -61,14 +58,11 @@ switch ($params[0]) {
         $controller->login($req);
         break;
 
-<<<<<<< HEAD
     case 'logout':
         $controller = new AuthController();
         $controller->logout($req);
         break;
 
-=======
->>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
     // ---- Panel Admin y CRUD (Protegido por GuardMiddleware) ----
     case 'admin-conciertos':
         $req = (new GuardMiddleware())->run($req);
@@ -96,7 +90,6 @@ switch ($params[0]) {
         $controller->editConcert($req);
         break;
 
-<<<<<<< HEAD
     case 'admin-bandas':
         $req = (new GuardMiddleware())->run($req);
         $controller = new BandasController();
@@ -130,8 +123,6 @@ switch ($params[0]) {
         $controller->update($req);
         break;
 
-=======
->>>>>>> 4e7772db04f094b9a25864ce9fc0483579a7664e
     default:
         echo '404 error';
         break;
