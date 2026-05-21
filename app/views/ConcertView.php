@@ -90,7 +90,7 @@ class ConcertView {
         require_once __DIR__ . '/templates/layout/footer.phtml';
     }
 
-    public function showConcertsByBanda($concerts) {
+    public function showConcertsByBanda($concerts, $nombre_banda) {
         require_once __DIR__ . '/templates/layout/header.phtml';
         require_once __DIR__ . '/templates/conciertosPorBanda.phtml';
         require_once __DIR__ . '/templates/layout/footer.phtml';
