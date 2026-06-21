@@ -1,11 +1,28 @@
-<h1>Bandas</h1>
+<h2>Listado de Bandas</h2>
 
-<ul>
-    <?php foreach($bandas as $banda){ ?>
-        <li>
-            <a href="<?= BASE_URL ?>conciertos-banda/<?= $banda->id_banda ?>">
-                <?= $banda->nombre ?>
-            </a>
-        </li>
-    <?php } ?>
-</ul>
+<?php foreach($bandas as $banda): ?>
+    <h3>
+        <a href="<?= BASE_URL ?>conciertos-banda/<?= $banda->id_banda ?>">
+            <?= htmlspecialchars($banda->nombre) ?>
+        </a>
+    </h3>
+    <p>
+        Género: <?= htmlspecialchars($banda->genero) ?>
+    </p>
+    <p>
+        País: <?= htmlspecialchars($banda->pais_de_origen) ?>
+    </p>
+    <?php if(!empty($banda->descripcion)): ?>
+        <p>
+            <?= htmlspecialchars($banda->descripcion) ?>
+        </p>
+    <?php endif; ?>
+    <?php if(!empty($banda->img)): ?>
+        <img 
+            src="<?= htmlspecialchars($banda->img) ?>" 
+            alt="<?= htmlspecialchars($banda->nombre) ?>"
+            style="max-width:300px; border-radius:8px; margin:10px 0;"
+        >
+    <?php endif; ?>
+    <hr>
+<?php endforeach; ?>

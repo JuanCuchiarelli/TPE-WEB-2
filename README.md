@@ -19,10 +19,22 @@ El sistema permitirá buscar información sobre bandas musicales y los concierto
 ## Rol de cada integrante
 
 -Germán (Rol A)**: Desarrollo de la entidad N (Conciertos), CRUD completo de ítems con selección dinámica de categorías, sistema de enrutamiento base, control de acceso mediante sesiones y procesamiento del inicio de sesión (Login administrador).
+
 -Juan (Rol B)**: Desarrollo de la entidad 1 (Bandas), CRUD completo de categorías, listado público de categorías e ítems filtrados por categoría, y funcionalidad de cierre de sesión (Logout).
 
-### Usuario y Clave para administrador
+## Cómo desplegar el proyecto
+1. Clonar o descargar el repositorio
+2. Copiar la carpeta del proyecto dentro de `C:/xampp/htdocs`
+3. Iniciar `Apache` y `MySQL` desde XAMPP
+4. Abrir en el navegador `http://localhost/TPE-WEB-2-master/conciertos`
 
-Para acceder a las secciones privadas de administración y testing del sitio (`/admin-conciertos`), utilice los siguientes datos requeridos en la consigna:
+## Usuario y Clave para administrador
+
+Para acceder a las secciones privadas de administración y testing del sitio (`/admin-conciertos` y `/admin-bandas`), utilice los siguientes datos requeridos en la consigna:
+
 -**Usuario:** `webadmin`
+
 -**Contraseña:** `admin`
+
+
+

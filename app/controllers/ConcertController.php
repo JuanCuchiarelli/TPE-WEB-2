@@ -93,6 +93,16 @@ class ConcertController {
             );
         }
         $concerts = $this->model->getByBanda($id_banda);
-        $this->view->showConcertsByBanda($concerts);
+        $db = getDBConnection();
+        $query = $db->prepare(
+            "SELECT nombre FROM bandas WHERE id_banda = ?"
+        );
+        $query->execute([$id_banda]);
+        $banda = $query->fetch(PDO::FETCH_OBJ);
+        $nombre_banda = $banda->nombre;
+        $this->view->showConcertsByBanda(
+            $concerts,
+            $nombre_banda
+        );
     }
 }

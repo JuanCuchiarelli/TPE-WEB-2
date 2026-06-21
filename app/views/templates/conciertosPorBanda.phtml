@@ -1,18 +1,19 @@
-<h1>Conciertos de la banda</h1>
-
+<h2>
+    Conciertos de <?= htmlspecialchars($nombre_banda) ?>
+</h2>
 <?php if (empty($concerts)) : ?>
     <p>No hay conciertos cargados para esta banda.</p>
 <?php else : ?>
     <?php foreach ($concerts as $concert) : ?>
-        <div>
-            <h3><?= $concert->lugar ?></h3>
-            <p>
-                Fecha: <?= $concert->fecha ?>
-            </p>
-            <p>
-                Ciudad: <?= $concert->ciudad ?>
-            </p>
-            <hr>
-        </div>
+        <h3>
+            <?= htmlspecialchars($concert->lugar) ?>
+        </h3>
+        <p>
+            Fecha: <?= htmlspecialchars($concert->fecha) ?>
+        </p>
+        <p>
+            Ciudad: <?= htmlspecialchars($concert->ciudad) ?>
+        </p>
+        <hr>
     <?php endforeach; ?>
 <?php endif; ?>
