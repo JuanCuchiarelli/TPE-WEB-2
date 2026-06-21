@@ -5,7 +5,7 @@ class ConcertModel {
     private $db;
 
     public function __construct() {
-        $this->db = getDBConnection(); // Llama a la función de auto-deploy automático
+        $this->db = getDBConnection();
     }
 
     public function getAllConcerts() {
@@ -35,12 +35,15 @@ class ConcertModel {
         $query->execute([$fecha, $lugar, $ciudad, $id_banda, $p_platea, $p_campo, $p_popular, $id]);
     }
 
-    //listado de items por categoria
     public function getByBanda($id_banda){
         $query = $this->db->prepare('SELECT * FROM conciertos WHERE id_banda = ?');
         $query->execute([$id_banda]);
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
 
-        $conciertos = $query->fetchAll(PDO::FETCH_OBJ);
-        return $conciertos;
+    public function getBandasForSelection() {
+        $query = $this->db->prepare("SELECT id_banda, nombre FROM bandas");
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 }

@@ -7,13 +7,11 @@ class ConcertController {
     private $model;
     private $view;
     private $errorView;
-    private $db;
 
     public function __construct() {
         $this->model = new ConcertModel();
         $this->view = new ConcertView();
         $this->errorView = new ErrorView();
-        $this->db = getDBConnection();
     }
 
     public function showConcerts($req) {
@@ -32,10 +30,7 @@ class ConcertController {
 
     public function showAdminPanel($req) {
         $concerts = $this->model->getAllConcerts();
-        
-        $query = $this->db->query("SELECT id_banda, nombre FROM bandas");
-        $bandas = $query->fetchAll(PDO::FETCH_OBJ);
-        
+        $bandas = $this->model->getBandasForSelection();
         $this->view->showAdminPanel($concerts, $bandas);
     }
 
@@ -85,8 +80,7 @@ class ConcertController {
         }
 
         $concert = $this->model->getConcertById($id);
-        $query = $this->db->query("SELECT id_banda, nombre FROM bandas");
-        $bandas = $query->fetchAll(PDO::FETCH_OBJ);
+        $bandas = $this->model->getBandasForSelection();
 
         $this->view->showEditForm($concert, $bandas);
     }
